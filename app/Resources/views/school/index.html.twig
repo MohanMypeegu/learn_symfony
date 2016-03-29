@@ -1,0 +1,18 @@
+<h1>School list:</h1>
+
+<table border="1" cellpadding="10">
+	<tr>
+		<th>#</th>
+		<th>School name</th>
+		<th>Username</th>
+		<th>Contact person</th>
+	</tr>
+	{% for school in schools %}
+	<tr>
+		<td>{{ '# ' ~ loop.index }}</td>
+		<td>{{ school.schoolname|upper }}</td>
+		<td>{{ school.username|lower }}</td>
+		<td>{{ school.contact_pname }}</td>
+	</tr>
+	{% endfor %}
+</table>
