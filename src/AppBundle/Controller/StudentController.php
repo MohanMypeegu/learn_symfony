@@ -42,6 +42,7 @@ class StudentController extends Controller
 		$em = $this->getDoctrine()->getManager();
 		$em->persist($student);
 		$em->flush();
+		
 		return new Response('Created student id '.$student->getId());
 	}
 	
