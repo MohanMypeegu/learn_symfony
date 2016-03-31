@@ -1,0 +1,21 @@
+<h1>The list of Students :</h1>
+<form method="POST">
+<table border="1">
+	<tr>
+	 	<th>ID</th>
+		<th>Name</th>
+		<th>Gender</th>
+		<th>Address</th>
+	</tr>
+	{% for student in students %}
+	<tr> 
+	 	<td><a data-method="POST" href="{{ path('editstudent', {id: student.id}) }}" >{{ student.id }}</a></td>
+		<td><input type="text" name="name" id="name" value="{{ student.name|upper }}" /></td>
+		<td><input type="text" name="name" id="name" value="{{ student.gender }}" /></td>
+		<td><input type="text" name="name" id="name" value="{{ student.address }}" /></td>
+		
+		
+	</tr>
+	{% endfor %}
+</table>
+</form>

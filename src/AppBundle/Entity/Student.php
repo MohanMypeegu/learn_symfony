@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Student
  *
  * @ORM\Table(name="student")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\StudentRepository")
+ * @ORM\Entity
  */
 class Student
 {
@@ -94,9 +94,9 @@ class Student
     /**
      * @var boolean
      *
-     * @ORM\Column(name="block_student", type="boolean", nullable=false)
+     * @ORM\Column(name="status", type="boolean", nullable=false)
      */
-    private $blockStudent;
+    private $status;
 
     /**
      * @var \DateTime
@@ -108,21 +108,21 @@ class Student
     /**
      * @var string
      *
-     * @ORM\Column(name="created_by", type="string", length=20, nullable=false)
+     * @ORM\Column(name="created_by", type="string", length=20, nullable=true)
      */
     private $createdBy;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetime", nullable=false)
+     * @ORM\Column(name="updated", type="datetime", nullable=true)
      */
     private $updated;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="updated_by", type="string", length=20, nullable=false)
+     * @ORM\Column(name="updated_by", type="string", length=20, nullable=true)
      */
     private $updatedBy;
 
@@ -369,26 +369,26 @@ class Student
     }
 
     /**
-     * Set blockStudent
+     * Set status
      *
-     * @param boolean $blockStudent
+     * @param boolean $status
      * @return Student
      */
-    public function setBlockStudent($blockStudent)
+    public function setStatus($status)
     {
-        $this->blockStudent = $blockStudent;
+        $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Get blockStudent
+     * Get status
      *
      * @return boolean 
      */
-    public function getBlockStudent()
+    public function getStatus()
     {
-        return $this->blockStudent;
+        return $this->status;
     }
 
     /**
